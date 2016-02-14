@@ -1,2 +1,2 @@
 # rubyworks
-Ruby ile ilgili örnek kod dosyalarını içermektedir.
+Ruby programlama dili ile ilgili çalışmalarıma ait örnek kod dosyalarını içeren github projesidir.
