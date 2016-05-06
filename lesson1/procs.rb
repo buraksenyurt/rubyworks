@@ -1,3 +1,4 @@
+# Utility class
 class Utility
  
 def justDoIt(someProc)
