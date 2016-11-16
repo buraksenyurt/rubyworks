@@ -46,7 +46,6 @@ objects.each{|o|puts o.class}
 		"#{@nick}-[#{@point}]"
 	 end
  end
-
  puts burki.to_s
  
  #10
@@ -60,30 +59,37 @@ objects.each{|o|puts o.class}
  puts name.karizma
  
  #11
- def F!(number)
-	 if number==0
-		return 1
-	 else
-		return number*F!(number-1)
-	 end
- end
- puts F!(40) #with google calc
- puts F!(500) #with google calc
+class Common
+	def self.f!(n)
+		if n==0
+			return 1
+		else
+			return n*f!(n-1)
+		end
+	end
+end
+puts Common.f!(10)
+puts Common.f!(3)
+puts Common.f!(170)
  
 #12
-def sum(x,y)
-	a,b,c,d=x+y,x-y,x*y,x/y
+class Common
+	def multi(x,y)
+		return x+y,x-y,x*y,x/y
+	end
 end
-puts sum(3,4)
-a,b,c,d=sum(3,6)
-puts a,b,c,d
+#puts Common.multi(3,4) #error
+einstein=Common.new
+puts einstein.multi(4,2)
 
 #13
-def sum(*numbers)
-	total=0
-	numbers.each{|n|total+=n}
-	total
+class Common
+	def sum(*numbers)
+		total=0
+		numbers.each{|n|total+=n}
+		total
+	end
 end
-puts sum(1,2,3,4)
+einstein.sum(1,2,3,6)
 
 #REST Service Sample
