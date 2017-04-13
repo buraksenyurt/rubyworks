@@ -46,3 +46,22 @@ note.puts "Neyse görüşürüz"
 
 #Dosya içeriğini tek ifade ile de okuyabiliriz
 puts File.open("Notes.txt").readlines
+
+#Bir byte içeriğini belli bloklar halinde okumak için aşağıdaki tekniği kullanabiliriz
+#Bunda File sınıfına bir Monkey Patching söz konusudur da.
+MEGABYTE=1024*1024
+
+class File
+  def read_chunk(chunk_size=MEGABYTE)
+    yield read(chunk_size) until eof?
+  end
+end
+fileName="./Images/IMG_20170410_074439.jpg"
+File.open fileName,"rb" do |reader|
+  reader.read_chunk{|c|puts c}
+end
+
+#Bir diğer blok halinde okuma tekniği
+File.open(fileName).each(nil,MEGABYTE){|c|
+  puts c
+}
