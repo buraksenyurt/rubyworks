@@ -45,3 +45,7 @@ case someTitle
 when /we/
   puts "yeap there is a we keyword"
 end
+
+#ruby dilinde her şey bir nesnesdir. Nesne üyelerini görmek oldukça kolaydır.
+#örneğin String sınıfının metodlarını alfabetik sırada elde edelim
+puts String.methods.to_a.sort
