@@ -34,3 +34,11 @@ def Calculate(*args)
 end
 Calculate(1,2,3,4){|n|puts n*2}
 Calculate(9,3)
+
+#versyion 4
+def withParameters(name)
+  puts "begin of withParamters"
+  yield name if block_given?
+  puts "end of withParameters"
+end
+withParameters("burak"){|n| puts n}
