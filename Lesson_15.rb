@@ -42,3 +42,22 @@ def withParameters(name)
   puts "end of withParameters"
 end
 withParameters("burak"){|n| puts n}
+  
+#find_all metodunun bir benzeri
+#aşağıdaki metod çok şıktır. kendi içine yield ile bir kod bloğunu alabilir ve
+#uygulandığı veri kümesinde bu blokla gelen kriterlere uyan elementleri
+#geri döndürebilir
+public
+def findSomethings
+  result=[]
+  self.each do |item|
+    if block_given? 
+      if yield(item)
+        result<<item
+      end
+    end
+  end
+  result
+end
+r=[1,5,8,10,2,4,3,5,7,19,29,18].findSomethings{|n|n%3==0}
+puts r
