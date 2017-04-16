@@ -47,8 +47,14 @@ def find_adjective(string)
 end
 
 #find_adjective metodunu kullanarak reviews içerisindeki is sonrası gelen kelimeleri buluyoruz
-adjectives=[]
-reviews.each do |review|
-  adjectives<<find_adjective(review)
+#adjectives=[]
+#reviews.each do |review|
+#  adjectives<<find_adjective(review)
+#end
+#puts "\n",adjectives
+
+adjectives=reviews.map do |review|
+  adjective=find_adjective(review)
+  "'#{adjective.capitalize}'"
 end
 puts "\n",adjectives
