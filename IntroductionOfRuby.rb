@@ -54,7 +54,7 @@ File.open("oyuncular.dat","w") do |f|
   end
 end
 
-#bir kaç pratik gauss hesaplaması
+#bir kaç pratik toplam hesaplaması
 sum=0
 1.upto(100){|n| sum+=n}
 puts sum
@@ -75,9 +75,27 @@ sum=0
 1.step(100,5){|n|sum+=n}
 puts sum
 
-#kod yazan ve çalıştıran kod. En basit haliyle
+#kod yazan ve çalıştıran kod. En basit haliyle.
 codes="puts \"what's your name?\" 
     yourName=gets
     3.times{puts \"\#{yourName.upcase}\"}
 "
 eval codes
+
+# Bir block yazıp sihir yapılabilir
+public
+def find_all_myway
+  result=[]
+  if block_given? 
+      self.each do |e|
+        if(yield(e)) 
+          result<<e
+        end
+      end
+    end
+  result
+end
+
+numbers=(1..10)
+oddNumbers=numbers.find_all_myway{|n| n%3==0}
+puts oddNumbers
