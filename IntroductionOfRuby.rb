@@ -60,6 +60,12 @@ sum=0
 puts sum
 
 sum=0
+for i in 1..100  
+  sum+=(i*2)
+end
+puts sum
+
+sum=0
 (1..100).each do |n|
   sum+=n if n%2==0
 end
@@ -99,3 +105,16 @@ end
 numbers=(1..10)
 oddNumbers=numbers.find_all_myway{|n| n%3==0}
 puts oddNumbers
+
+#Var olan bir tipi genişletebilirim
+class String
+  def write_difference
+    result=""
+    self.split("").each do |c|
+      result<<c<<" "
+    end
+    result.chomp
+  end
+end
+motto="Today is a rainy day"
+puts motto.write_difference()
