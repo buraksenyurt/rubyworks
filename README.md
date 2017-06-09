@@ -1,7 +1,7 @@
 # Ruby Eğitim Ders Notları
 
 İç eğitimlerde kullanılan temel seviye ruby kod dosyalarını içermektedir.
-Ruby ile ilgili çalışmalara [Blog Adresimden](http://www.buraksenyurt.com/category/Ruby.aspx) de ulaşılabilinir.
+Ruby ile ilgili çalışmalara [Blog Adresimden](http://www.buraksenyurt.com/category/Ruby) de ulaşılabilinir.
 
 Eğitimde ele alınacak temek konu başlıkları şu şekildedir
 
